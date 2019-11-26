@@ -1,3 +1,3 @@
 FROM tomcat:latest
-COPY target/my-farm.war /usr/lib/tomcat/webapps/my-farm.war
+COPY target/my-farm.war /usr/local/tomcat/webapps/my-farm.war
 
