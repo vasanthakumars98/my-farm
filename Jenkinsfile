@@ -17,7 +17,7 @@ pipeline {
         }
        stage("deploy to QA-1"){
              steps{
-                 sh "anisble-playbook install-war-QA1.yml"
+                 sh "ansible-playbook install-war-QA1.yml"
             }
 
         }
