@@ -5,28 +5,28 @@
       become: true
 
     - name: task 2 remove old files in webapps folder
-      file: path=/var/lib/tomcat8/webapps/sample.war state=absent
+      file: path=/var/lib/tomcat8/webapps/*.war state=absent
       become: true
       #become_user: ubuntu
  
     - name: remove old war file from staging area
-      file: path=/tmp/sample.war state=absent
+      file: path=/tmp/*.war state=absent
       become: true
       #become_user: ubuntu
 
-    - name: download war from cloud
-      get_url: url=https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war dest=/tmp/sample.war
+    - name: copy from target of maven build
+      shell: cp target/my-farm.war /tmp/my-farm.war
       become: true
       #become_user: ubuntu
 
     - name: changemode 777 for war file
-      file: path=/tmp/sample.war mode=0777
+      file: path=/tmp/my-farm.war mode=0777
       become: true
       #become_user: ubuntu
 
     - name: copy the war
       #shell: cp /tmp/sample.war /var/lib/tomcat8/webapps/sample.war
-      copy: src=/tmp/sample.war dest=/var/lib/tomcat8/webapps/sample.war
+      copy: src=/tmp/my-farm.war dest=/var/lib/tomcat8/webapps/my-farm.war
       become: true
       #become_user: ubuntu
       notify: tomcat8 starting
