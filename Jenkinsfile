@@ -1,6 +1,6 @@
-pipeline{
+pipeline {
     
-    agents { 'label' 'linux-build'}
+    agent { 'label' 'java-build'}
     stages{
 
         stage("build-the-source-code"){
