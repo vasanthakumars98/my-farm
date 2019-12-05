@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: locahost
   tasks:
     - name: task 1 tomcat8 stop
       service: name=tomcat8 state=stopped
@@ -8,7 +8,8 @@
       file: path=/var/lib/tomcat8/webapps/*.war state=absent
       become: true
       #become_user: ubuntu
- 
+      #notify: tomcat8 starting
+
     - name: remove old war file from staging area
       file: path=/tmp/*.war state=absent
       become: true

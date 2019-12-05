@@ -1,5 +1,5 @@
 - hosts: localhost
   tasks:
    - name: run the docker image
-     shell: docker run -d -P my-farm:v1
+     shell: docker run -d -P my-farm:v2
     

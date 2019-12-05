@@ -40,6 +40,13 @@ pipeline {
             }
 
         }
+      stage(" Monitoring : check if server is up "){
+           steps{
+                
+		curl -L http://192.168.170.128:8080
+
+	   }
+	}
 
    }
 
