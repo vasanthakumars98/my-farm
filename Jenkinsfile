@@ -15,19 +15,19 @@ pipeline {
             }
 
         }
-       stage("deploy to QA-1"){
+       stage("deploy to Environment QA-1"){
              steps{
                  sh "ansible-playbook install-war-QA1.yml"
             }
 
         }
-       stage("build docker image for QA2"){
+       stage("build docker image for Enviroment QA2"){
              steps{
-                 sh "docker build -t my-farm:v1 ."
+                 sh "docker build -t my-farm:v2 ."
             }
 
         }
-       stage("docker run on QA2"){
+       stage("docker run on Environement QA2"){
              steps{
                  //sh "docker run -d -P my-farm:v1"
                    sh "ansible-playbook  install-war-QA2-docker.yml"
