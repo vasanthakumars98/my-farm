@@ -1,4 +1,4 @@
-- hosts: locahost
+- hosts: localhost
   tasks:
     - name: task 1 tomcat8 stop
       service: name=tomcat8 state=stopped
