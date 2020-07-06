@@ -1,6 +1,6 @@
 pipeline {
     
-    agent { 'label'}
+    agent { 'label' 'docker'}
     stages{
 
         stage("build-the-source-code"){
