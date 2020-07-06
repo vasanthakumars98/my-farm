@@ -43,7 +43,7 @@ pipeline {
       stage(" Monitoring : check if server is up "){
            steps{
                 
-		sh "curl -L http://192.168.170.128:8080"
+		sh "curl -L http://192.168.43.194:8080"
 
 	   }
 	}
